@@ -1,2 +1,2 @@
-# DB_test
+# 2022 databases
 데이터베이스 설계
