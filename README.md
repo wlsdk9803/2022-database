@@ -15,11 +15,13 @@ mysql로 inha DB를 생성하고, 이를 웹에서 insert, update, select하는 
 
 ###week12
 인하대학교 수강신청 페이지를 mysql을 이용하여 비슷하게 클론코딩
+
 https://user-images.githubusercontent.com/103057334/210140523-3071d4e1-1c4a-4e18-a297-5aa61116bd00.mp4
 
 
 
 ###final project
 차량 거래 시스템 car dealer 페이지 구현
+
 https://user-images.githubusercontent.com/103057334/210140536-a34fb95d-5d8d-4671-99b9-cc6c6213556f.mp4
 
