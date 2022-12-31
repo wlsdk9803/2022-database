@@ -1,0 +1,36 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
+  <script>
+    const toMain=()=>{window.location.href="http://localhost:3000"}; const
+    logout = () => {window.location.href="http://localhost:3000/logout"}; const
+    toSelectAvailable = () =>
+    {window.location.href="http://localhost:3000/selectAvailable"}; const
+    toMyReservation = () =>
+    {window.location.href="http://localhost:3000/myReservation"}; const
+    toMyPurchase = () =>
+    {window.location.href="http://localhost:3000/myPurchase"}; const
+    toMyInformation = () =>
+    {window.location.href="http://localhost:3000/myInformation"};
+  </script>
+</head>
+<div class="totalWrapper">
+      <div class="mainTitle">안녕하세요, {{user}}님!</div>
+      <div class="subTitle">무엇을 도와드릴까요?</div>
+      <div class="buttonWrapper">
+        <button onclick="toSelectAvailable()">차량 조회</button>
+        <button onclick="toMyReservation()">나의 예약</button>
+        <button style="font-size: 13px" onclick="toMyPurchase()">나의 구매 내역</button>
+        <button style="font-size: 13px" onclick="toMyInformation()">나의 개인정보</button>
+      </div>
+      <div class="logout" onclick="logout()">logout</div>
+    </div>
+</div>
+<span class="logo-icon">🚗</span>

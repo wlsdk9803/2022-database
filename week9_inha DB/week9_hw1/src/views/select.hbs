@@ -1,0 +1,251 @@
+<h1>{{title}}</h1>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+  </tr>
+  {{#each building}}
+    <tr>
+      <td>{{Id}}</td>
+      <td>{{Name}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title2}}</h1>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Professor</td>
+    <td>Number_of_participants</td>
+    <td>Department_Id</td>
+  </tr>
+  {{#each myclass}}
+    <tr>
+      <td>{{Id}}</td>
+      <td>{{Name}}</td>
+      <td>{{Professor}}</td>
+      <td>{{Number_of_participants}}</td>
+      <td>{{Department_Id}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title3}}</h1>
+
+<table>
+  <tr>
+    <td>Class_Id</td>
+    <td>Room_Id</td>
+    <td>Room_Building_Id</td>
+  </tr>
+  {{#each class_has_room}}
+    <tr>
+      <td>{{Class_Id}}</td>
+      <td>{{Room_Id}}</td>
+      <td>{{Room_Building_Id}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title4}}</h1>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Department_Id</td>
+    <td>Room_Id</td>
+    <td>Room_Building_Id</td>
+  </tr>
+  {{#each club}}
+    <tr>
+      <td>{{Id}}</td>
+      <td>{{Name}}</td>
+      <td>{{Department_Id}}</td>
+      <td>{{Room_Id}}</td>
+      <td>{{Room_Building_Id}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title5}}</h1>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Phone_number</td>
+    <td>Building_Id</td>
+  </tr>
+  {{#each department}}
+    <tr>
+      <td>{{Id}}</td>
+      <td>{{Name}}</td>
+      <td>{{Email}}</td>
+      <td>{{Phone_number}}</td>
+      <td>{{Building_Id}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title6}}</h1>
+
+<table>
+  <tr>
+    <td>Department_Id</td>
+    <td>Employee_Id</td>
+  </tr>
+  {{#each department_has_employee}}
+    <tr>
+      <td>{{Department_Id}}</td>
+      <td>{{Employee_Id}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title7}}</h1>
+
+<table>
+  <tr>
+    <td>Department_Id</td>
+    <td>Student_Id</td>
+  </tr>
+  {{#each department_has_student}}
+    <tr>
+      <td>{{Department_Id}}</td>
+      <td>{{Student_Id}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title8}}</h1>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Position</td>
+  </tr>
+  {{#each employee}}
+    <tr>
+      <td>{{Id}}</td>
+      <td>{{Name}}</td>
+      <td>{{Position}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title9}}</h1>
+
+<table>
+  <tr>
+    <td>Employee_Id</td>
+    <td>Class_Id</td>
+    <td>Class_Department_Id</td>
+  </tr>
+  {{#each employee_has_class}}
+    <tr>
+      <td>{{Employee_Id}}</td>
+      <td>{{Class_Id}}</td>
+      <td>{{Class_Department_Id}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title10}}</h1>
+
+<table>
+  <tr>
+    <td>Employee_Id</td>
+    <td>Room_Id</td>
+    <td>Room_Building_Id</td>
+  </tr>
+  {{#each employee_has_room}}
+    <tr>
+      <td>{{Employee_Id}}</td>
+      <td>{{Room_Id}}</td>
+      <td>{{Room_Building_Id}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title11}}</h1>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Capacity</td>
+    <td>Building_Id</td>
+  </tr>
+  {{#each room}}
+    <tr>
+      <td>{{Id}}</td>
+      <td>{{Name}}</td>
+      <td>{{Capacity}}</td>
+      <td>{{Building_Id}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title12}}</h1>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Phone_number</td>
+    <td>Major</td>
+    <td>Student_Id</td>
+    <td>Employee_Id</td>
+  </tr>
+  {{#each student}}
+    <tr>
+      <td>{{Id}}</td>
+      <td>{{Name}}</td>
+      <td>{{Email}}</td>
+      <td>{{Phone_number}}</td>
+      <td>{{Major}}</td>
+      <td>{{Student_Id}}</td>
+      <td>{{Employee_Id}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title13}}</h1>
+
+<table>
+  <tr>
+    <td>Student_Id</td>
+    <td>Class_Id</td>
+    <td>Class_Department_Id</td>
+  </tr>
+  {{#each student_has_class}}
+    <tr>
+      <td>{{Student_Id}}</td>
+      <td>{{Class_Id}}</td>
+      <td>{{Class_Department_Id}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>{{title14}}</h1>
+
+<table>
+  <tr>
+    <td>Student_Id</td>
+    <td>Club_Id</td>
+  </tr>
+  {{#each student_has_club}}
+    <tr>
+      <td>{{Student_Id}}</td>
+      <td>{{Club_Id}}</td>
+    </tr>
+  {{/each}}
+</table>

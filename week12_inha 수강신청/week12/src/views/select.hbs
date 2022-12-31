@@ -1,0 +1,156 @@
+<!--
+ Copyright 2022 kms
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+     http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<head>
+  <link rel="stylesheet" type="text/css" href="select.css" />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <script>
+    const logout = () => {window.location.href="http://localhost:3000/logout"};
+    const move = () => {window.location.href="http://localhost:3000/sugang"};
+  </script>
+</head>
+<div class="header">
+  <div class="header-logo">
+    <div class="logo"><img
+        src="./img/inhaLogo.png"
+        alt="INHA UNIVERSITY"
+      /></div>
+    <span class="logo-text">수강신청</span>
+  </div>
+
+  <div class="header-info">
+    <span class="header-info_title">2021 교육과정 개편 관련 경과조치 안내 (<span
+        class="header-info_title_strong"
+      >2020 이전 학번 필수 참조</span>) -> 자세히보기</span>
+  </div>
+</div>
+
+<div class="content">
+  <div class="side">
+    <div class="side-frame">
+      <div class="side-frame_id">
+        <div class="userinfo">{{user}}</div>
+        <button class="logout" onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <div class="side-menu">
+      <div class="side-menu_list">
+        <span>수강안내</span>
+        <span class="material-icons">add</span>
+      </div>
+      <div class="side-menu_list">
+        <span>강의진단</span>
+        <span class="material-icons">add</span>
+      </div>
+      <div
+        class="side-menu_list"
+        style="background-color: #0770bb; color: white"
+        onclick="move()"
+      >
+        <span>수강신청</span>
+        <span class="material-icons">add</span>
+      </div>
+      <div class="side-menu_list">
+        <span>성적확인</span>
+        <span class="material-icons">add</span>
+      </div>
+      <div class="side-menu_list">
+        <span>계절학기</span>
+        <span class="material-icons">add</span>
+      </div>
+      <div class="side-menu_list">
+        <span>교과조회</span>
+        <span class="material-icons">add</span>
+      </div>
+      <div class="side-menu_list">
+        <span>참고 Link</span>
+        <span class="material-icons">add</span>
+      </div>
+      <div class="side-menu_list">
+        <span>개인정보처리방침</span>
+        <span class="material-icons">add</span>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="main-top">
+      <span class="main-top_title">2022학년 2학기 수강신청</span>
+      <div class="main-top_table">
+        {{! TODO }}
+        {{! Database에서 class 데이터를 가져와서 테이블로 보여주기 }}
+        {{! 마지막 열에는 "수강신청" 이라는 버튼이 있어야 함 }}
+        {{! 수강신청 버튼을 클릭하면 DB에 해당 결과가 반영되어야 함 }}
+        <table>
+          <tr class="table-top">
+            <td>Id</td>
+            <td>Name</td>
+            <td>Professor</td>
+            <td>Number_of_participants</td>
+            <td>Department_Id</td>
+            <td>Extra_seat</td>
+            <td>수강 신청</td>
+          </tr>
+          {{#each myclass}}
+            <form method="post">
+              <tr>
+                <td>{{Id}}</td>
+                <td>{{Name}}</td>
+                <td>{{Professor}}</td>
+                <td>{{Number_of_participants}}</td>
+                <td>{{Department_Id}}</td>
+                <td><input
+                    readonly
+                    style="border:none; outline: none; font-size: 15px; text-align: center; width: 100%;"
+                    name="extraSeat"
+                    value="{{Extra_seat}}"
+                    formaction="/sugang"
+                  /></td>
+                <td>
+                  <button
+                    name="classId"
+                    type="submit"
+                    value="{{Id}}"
+                    formaction="/sugang"
+                    style="cursor: pointer;"
+                  >수강신청</button>
+                </td>
+              </tr>
+            </form>
+          {{/each}}
+        </table>
+
+        <h1 style="margin-top: 30px; color: #666;">나의 수강 정보</h1>
+        <table style="margin-top: 10px;">
+          <tr class="table-top">
+            <td>Student_Id</td>
+            <td>Class_Id</td>
+            <td>Class_Department_Id</td>
+          </tr>
+          {{#each student_has_class}}
+            <tr>
+              <td>{{Student_Id}}</td>
+              <td>{{Class_Id}}</td>
+              <td>{{Class_Department_Id}}</td>
+            </tr>
+          {{/each}}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

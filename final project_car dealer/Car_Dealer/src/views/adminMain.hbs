@@ -1,0 +1,39 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
+  <script>
+    const toMain=()=>{window.location.href="http://localhost:3000"}; 
+    const logout = () => {window.location.href="http://localhost:3000/logout"}; 
+    const toSelectTotal = () =>
+    {window.location.href="http://localhost:3000/selectTotal"}; 
+    const toInsertVehicle = () =>
+    {window.location.href="http://localhost:3000/insertVehicle"}; 
+    const toSelectReservation = () =>
+    {window.location.href="http://localhost:3000/selectReservation"};
+    const toUpdateReservation = () =>
+    {window.location.href="http://localhost:3000/updateReservation"};
+    const toSelectSoldout = () =>
+    {window.location.href="http://localhost:3000/selectSoldout"};
+  </script>
+</head>
+<div class="totalWrapper">
+      <div class="mainTitle">안녕하세요, {{user}}님!</div>
+      <div class="subTitle">무엇을 도와드릴까요?</div>
+      <div class="buttonWrapper">
+        <button style="font-size: 13px" onclick="toSelectTotal()">차량 정보 조회</button>
+        <button style="font-size: 13px" onclick="toInsertVehicle()">차량 정보 입력</button>
+        <button onclick="toSelectReservation()">예약 조회</button>
+        <button onclick="toUpdateReservation()">예약 수정</button>
+        <button style="font-size: 13px" onclick="toSelectSoldout()">판매내역 확인</button>
+      </div>
+      <div class="logout" onclick="logout()">logout</div>
+    </div>
+</div>
+<span class="logo-icon">🚗</span>

@@ -1,0 +1,60 @@
+.totalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-80%, -50%);
+}
+.mainTitle {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+.subTitle {
+  margin: 20px 10px;
+  color: rgb(109, 109, 109);
+  font-weight: semi-bold;
+}
+button {
+  background: #e4cdff;
+  box-shadow: 5px 5px 10px rgb(200, 200, 200);
+  font-weight: 700;
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 47%;
+  border: none;
+  margin: 40px 10px;
+}
+button:hover {
+  background: linear-gradient(to right, #c08cff, #882cf9);
+  color: #fff;
+}
+.logout {
+  margin-top: 20px;
+  text-align: center;
+  cursor: pointer;
+  color: rgb(127, 127, 127);
+}
+.logout:hover {
+  color: #882cf9;
+}
+span {
+  font-size: 250px;
+  margin: 200px 280px 0 0;
+  float: right;
+  cursor: default;
+  animation-name: logoMove;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+@keyframes logoMove {
+  from {
+    margin: 200px 0 0 0;
+  }
+  to {
+    margin: 200px 280px 0 0;
+  }
+}

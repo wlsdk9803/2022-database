@@ -1,0 +1,113 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="select.css" />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <script>
+    const toMain=()=>{window.location.href="http://localhost:3000"}; const
+    logout = () => {window.location.href="http://localhost:3000/logout"}; const
+    toSelectTotal = () =>
+    {window.location.href="http://localhost:3000/selectTotal"}; const
+    toInsertVehicle = () =>
+    {window.location.href="http://localhost:3000/insertVehicle"}; const
+    toSelectReservation = () =>
+    {window.location.href="http://localhost:3000/selectReservation"}; const
+    toSelectSoldout = () =>
+    {window.location.href="http://localhost:3000/selectSoldout"};
+  </script>
+</head>
+<div class="header">
+  <div class="header-logo">
+    <span
+      class="logo-icon"
+      style="font-size: 40px; cursor:pointer"
+      onclick="toMain()"
+    >🚗</span>
+    <span class="logo-text" onclick="toMain()" style="cursor: pointer;">car
+      dealer</span>
+  </div>
+
+  <div class="header-info">
+    <span class="header-info_title">What's your next car?</span>
+  </div>
+</div>
+
+<div class="content">
+  <div class="side">
+    <div class="side-frame">
+      <div class="side-frame_id">
+        <div class="userinfo">{{user}}</div>
+        <button class="logout" onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <div class="side-menu">
+      <div class="side-menu_list" onclick="toSelectTotal()">
+        <span>차량 정보 조회</span>
+      </div>
+      <div class="side-menu_list" onclick="toInsertVehicle()">
+        <span>차량 정보 입력</span>
+      </div>
+      <div class="side-menu_list" onclick="toSelectReservation()">
+        <span>예약 조회</span>
+      </div>
+      <div
+        class="side-menu_list"
+        style="background: linear-gradient(to right, #882cf9, #c08cff); color: white"
+      >
+        <span>예약 수정</span>
+      </div>
+      <div class="side-menu_list" onclick="toSelectSoldout()">
+        <span>판매내역 확인</span>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="main-top">
+      <span class="main-top_title">예약 수정</span>
+      <div class="main-top_table">
+        <br />
+        <table>
+          <tr class="table-top">
+            <td>vehicle_Vin</td>
+            <td>salesperson_sid</td>
+            <td>customer_Ssn</td>
+            <td>reservation_date</td>
+            <td>수정</td>
+          </tr>
+          {{#each reservation}}
+            <form method="post">
+              <tr>
+                <td>{{vehicle_Vin}}</td>
+                <td><input
+                    type="text"
+                    name="salesperson_sid"
+                    placeholder={{salesperson_sid}}
+                  /></td>
+                <td><input
+                    type="text"
+                    name="customer_Ssn"
+                    placeholder={{customer_Ssn}}
+                  /></td>
+                <td><input
+                    type="text"
+                    name="reservation_date"
+                    placeholder={{reservation_date}}
+                  /></td>
+                <td>
+                  <button
+                    name="update"
+                    type="submit"
+                    value="{{vehicle_Vin}}"
+                    formaction="/updateReservation"
+                    style="cursor: pointer;"
+                  >수정</button>
+                </td>
+              </tr>
+            </form>
+          {{/each}}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="select.css" />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <script>
+    const toMain=()=>{window.location.href="http://localhost:3000"};
+    const logout = () => {window.location.href="http://localhost:3000/logout"};
+    const toSelectAvailable = () =>
+    {window.location.href="http://localhost:3000/selectAvailable"}; const
+    toMyReservation = () =>
+    {window.location.href="http://localhost:3000/myReservation"};
+    const toMyInformation = () => {window.location.href="http://localhost:3000/myInformation"};
+  </script>
+</head>
+<div class="header">
+  <div class="header-logo">
+    <span
+      class="logo-icon"
+      style="font-size: 40px; cursor:pointer"
+      onclick="toMain()"
+    >🚗</span>
+    <span class="logo-text" onclick="toMain()" style="cursor: pointer;">car
+      dealer</span>
+  </div>
+
+  <div class="header-info">
+    <span class="header-info_title">What's your next car?</span>
+  </div>
+</div>
+
+<div class="content">
+  <div class="side">
+    <div class="side-frame">
+      <div class="side-frame_id">
+        <div class="userinfo">{{user}}</div>
+        <button class="logout" onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <div class="side-menu">
+      <div class="side-menu_list" onclick="toSelectAvailable()">
+        <span>차량 조회</span>
+      </div>
+      <div class="side-menu_list" onclick="toMyReservation()">
+        <span>나의 예약</span>
+      </div>
+      <div
+        class="side-menu_list"
+        style="background: linear-gradient(to right, #882cf9, #c08cff); color: white"
+      >
+        <span>나의 구매 내역</span>
+      </div>
+      <div class="side-menu_list" onclick="toMyInformation()">
+        <span>개인 정보</span>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="main-top">
+      <span class="main-top_title">나의 구매 내역</span>
+      <div class="main-top_table">
+        <br />
+        <table>
+          <tr class="table-top">
+            <td>Vin</td>
+            <td>Model</td>
+            <td>type</td>
+            <td>Price</td>
+            <td>License_plate</td>
+            <td>salesperson_sid</td>
+            <td>soldout_date</td>
+          </tr>
+          {{#each myPurchase}}
+              <tr>
+                <td>{{Vin}}</td>
+                <td>{{Model}}</td>
+                <td>{{type}}</td>
+                <td>{{Price}}</td>
+                <td>{{License_plate}}</td>
+                <td>{{salesperson_sid}}</td>
+                <td>{{soldout_date}}</td>
+                </td>
+              </tr>
+          {{/each}}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

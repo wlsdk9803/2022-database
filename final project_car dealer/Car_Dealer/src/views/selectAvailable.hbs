@@ -1,0 +1,121 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="select.css" />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <script>
+    const toMain=()=>{window.location.href="http://localhost:3000"}; const
+    logout = () => {window.location.href="http://localhost:3000/logout"}; const
+    toMyPurchase = () =>
+    {window.location.href="http://localhost:3000/myPurchase"}; const
+    toMyReservation = () =>
+    {window.location.href="http://localhost:3000/myReservation"}; const
+    toMyInformation = () =>
+    {window.location.href="http://localhost:3000/myInformation"}; const
+    toSelectAvailableCar = () =>
+    {window.location.href="http://localhost:3000/selectAvailableCar"}; const
+    toSelectAvailableSuv = () =>
+    {window.location.href="http://localhost:3000/selectAvailableSuv"}; const
+    toSelectAvailableTruck = () =>
+    {window.location.href="http://localhost:3000/selectAvailableTruck"};
+  </script>
+</head>
+<div class="header">
+  <div class="header-logo">
+    <span
+      class="logo-icon"
+      style="font-size: 40px; cursor:pointer"
+      onclick="toMain()"
+    >🚗</span>
+    <span class="logo-text" onclick="toMain()" style="cursor: pointer;">car
+      dealer</span>
+  </div>
+
+  <div class="header-info">
+    <span class="header-info_title">What's your next car?</span>
+  </div>
+</div>
+
+<div class="content">
+  <div class="side">
+    <div class="side-frame">
+      <div class="side-frame_id">
+        <div class="userinfo">{{user}}</div>
+        <button class="logout" onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <div class="side-menu">
+      <div
+        class="side-menu_list"
+        style="background: linear-gradient(to right, #882cf9, #c08cff); color: white"
+      >
+        <span>차량 조회</span>
+      </div>
+      <div class="side-menu_list" onclick="toMyReservation()">
+        <span>나의 예약</span>
+      </div>
+      <div class="side-menu_list" onclick="toMyPurchase()">
+        <span>나의 구매 내역</span>
+      </div>
+      <div class="side-menu_list" onclick="toMyInformation()">
+        <span>개인 정보</span>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="main-top">
+      <span class="main-top_title">예약 가능한 차량</span><br /><br />
+      <span class="main-top_title">세부 타입 정보 조회 바로가기=> (</span>
+      <span
+        class="main-top_title_car"
+        onclick="toSelectAvailableCar()"
+      >car</span>
+      <span class="main-top_title" style="font-size: 20px;">, </span>
+      <span
+        class="main-top_title_truck"
+        onclick="toSelectAvailableTruck()"
+      >truck</span>
+      <span class="main-top_title" style="font-size: 20px;">, </span>
+      <span
+        class="main-top_title_suv"
+        onclick="toSelectAvailableSuv()"
+      >suv</span>
+      <span class="main-top_title" style="font-size: 20px;">)</span>
+      <div class="main-top_table">
+        <br />
+        <table>
+          <tr class="table-top">
+            <td>Vin</td>
+            <td>Price</td>
+            <td>Model</td>
+            <td>License_plate</td>
+            <td>type</td>
+            <td>예약</td>
+          </tr>
+          {{#each getAvailableVehicle}}
+            <form method="post">
+              <tr>
+                <td>{{Vin}}</td>
+                <td>{{Price}}</td>
+                <td>{{Model}}</td>
+                <td>{{License_plate}}</td>
+                <td>{{type}}</td>
+                <td>
+                  <button
+                    name="Vin"
+                    type="submit"
+                    value="{{Vin}}"
+                    formaction="/selectAvailable"
+                    style="cursor: pointer;"
+                  >예약</button>
+                </td>
+              </tr>
+            </form>
+          {{/each}}
+        </table>
+        <br /><br />
+      </div>
+    </div>
+  </div>
+</div>

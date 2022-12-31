@@ -1,0 +1,151 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="insert.css" />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <script>
+    const toMain=()=>{window.location.href="http://localhost:3000"}; const
+    logout = () => {window.location.href="http://localhost:3000/logout"}; const
+    toSelectTotal = () =>
+    {window.location.href="http://localhost:3000/selectTotal"}; const
+    toSelectReservation = () =>
+    {window.location.href="http://localhost:3000/selectReservation"}; const
+    toUpdateReservation = () =>
+    {window.location.href="http://localhost:3000/updateReservation"}; const
+    toSelectSoldout = () =>
+    {window.location.href="http://localhost:3000/selectSoldout"};
+  </script>
+</head>
+<div class="header">
+  <div class="header-logo">
+    <span
+      class="logo-icon"
+      style="font-size: 40px; cursor:pointer"
+      onclick="toMain()"
+    >🚗</span>
+    <span class="logo-text" onclick="toMain()" style="cursor: pointer;">car
+      dealer</span>
+  </div>
+
+  <div class="header-info">
+    <span class="header-info_title">What's your next car?</span>
+  </div>
+</div>
+
+<div class="content">
+  <div class="side">
+    <div class="side-frame">
+      <div class="side-frame_id">
+        <div class="userinfo">{{user}}</div>
+        <button class="logout" onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <div class="side-menu">
+      <div class="side-menu_list" onclick="toSelectTotal()">
+        <span>차량 정보 조회</span>
+      </div>
+      <div
+        class="side-menu_list"
+        style="background: linear-gradient(to right, #882cf9, #c08cff); color: white"
+      >
+        <span>차량 정보 입력</span>
+      </div>
+      <div class="side-menu_list" onclick="toSelectReservation()">
+        <span>예약 조회</span>
+      </div>
+      <div class="side-menu_list" onclick="toUpdateReservation()">
+        <span>예약 수정</span>
+      </div>
+      <div class="side-menu_list" onclick="toSelectSoldout()">
+        <span>판매내역 확인</span>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="main-top">
+      <span class="main-top_title">차량 정보 입력</span>
+      <div class="main-top_table">
+        <br />
+        <form method="post">
+          <div>
+            <label for="Vin">Vin</label><input
+              required
+              type="text"
+              name="Vin"
+              placeholder="ex) 112233445"
+            /></div>
+          <div>
+            <label for="Price">Price</label><input
+              required
+              type="text"
+              name="Price"
+              placeholder="ex) $3000000"
+            /></div>
+          <div>
+            <label for="Model">Model</label><input
+              required
+              type="text"
+              name="Model"
+              placeholder="ex) Tucson"
+            /></div>
+          <div>
+            <label for="License_plate">License_plate</label><input
+              required
+              type="text"
+              name="License_plate"
+              placeholder="ex) 58러3822"
+            /></div>
+          <div>
+            <label
+              for="reservation_availability"
+            >reservation_availability</label><select
+              name="reservation_availability"
+            >
+              <option value="yes">yes</option>
+              <option value="no">no</option>
+            </select></div>
+          <div>
+            <label for="type">type</label><select name="type">
+              <option value="car">car</option>
+              <option value="suv">suv</option>
+              <option value="truck">truck</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="Engine-size">Engine_size</label><span
+              class="warning"
+            >(*type이 car인 경우만 작성*)</span><input
+              type="text"
+              name="Engine_size"
+              placeholder="ex) 5000cc"
+            /></div>
+          <div>
+            <label for="No-seats">No_seats</label><span class="warning">(*type이
+              suv인 경우만 작성*)</span><input
+              type="text"
+              name="No_seats"
+              placeholder="ex) 5"
+            /></div>
+          <div>
+            <label for="No-seats">Tonnage</label><span class="warning">(*type이
+              truck인 경우만 작성*)</span><input
+              type="text"
+              name="Tonnage"
+              placeholder="ex) 4"
+            /></div>
+          <div>
+            <button
+              name="insert"
+              type="submit"
+              formaction="/insertVehicle"
+              style="cursor: pointer; margin: 10px 20px"
+            >입력</button>
+          </div>
+        </form>
+        <br /><br />
+      </div>
+    </div>
+  </div>
+</div>
