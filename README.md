@@ -17,6 +17,7 @@ mysql로 inha DB를 생성하고, 이를 웹에서 insert, update, select하는 
 ![week9_update](https://user-images.githubusercontent.com/103057334/210140446-2b5c9c99-1ff0-4d9e-9251-f14cd118291b.png)
 ![week9_select](https://user-images.githubusercontent.com/103057334/210140447-93cc7744-d297-462e-bb2b-3ba2b33410ca.png)
 
+
   
 ## week12
 
@@ -24,6 +25,7 @@ mysql로 inha DB를 생성하고, 이를 웹에서 insert, update, select하는 
 
 
 https://user-images.githubusercontent.com/103057334/210140569-aa1dcff3-bd35-45db-af13-b341bdbb01e9.mp4
+
 
   
 ## final project
